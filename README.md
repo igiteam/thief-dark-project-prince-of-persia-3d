@@ -34,7 +34,7 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 
 ## Aureal A3D Audio 
-[https://github.com/igiteam/thief-gold-prince-of-persia-3d/blob/master/aureal-a3d-sdk/README.md](https://github.com/igiteam/thief-gold-prince-of-persia-3d/blob/master/aureal-a3d-sdk/README.md)
+[https://readme.macosxjs.com/?url=https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal-a3d-sdk%2FREADME.md](https://readme.macosxjs.com/?url=https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal-a3d-sdk%2FREADME.md)
 
 [https://html.macosxjs.com/?https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal_a3d_audio_research.html](https://html.macosxjs.com/?https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal_a3d_audio_research.html)
 
