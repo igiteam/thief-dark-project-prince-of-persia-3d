@@ -30,6 +30,8 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 [![Aureal Vortex A3D Demos Headphones Surround](https://img.youtube.com/vi/giksyYfjw3c/hqdefault.jpg)](https://www.youtube.com/watch?v=giksyYfjw3c)
 
+[![Prince Of Persia - 3D - 1999 Ambient Soundtrack](https://img.youtube.com/vi/NtKA1B078Mg/hqdefault.jpg)](https://ytembed.macosxjs.com/?TnRLQTFCMDc4TWc)
+
 
 ## Aureal A3D Audio 
 [https://github.com/igiteam/thief-gold-prince-of-persia-3d/blob/master/aureal-a3d-sdk/README.md](https://github.com/igiteam/thief-gold-prince-of-persia-3d/blob/master/aureal-a3d-sdk/README.md)
