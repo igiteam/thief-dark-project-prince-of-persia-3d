@@ -51,12 +51,7 @@ These are period-correct studio monitors, highly recommended for testing the "an
 *(Note: These images are from an eBay listing, used here for product identification.)*
 
 
-| Aspect | Screenshot |
-|--------|------------|
-| 16x10 | [![16x10](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x10.png)](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x10.png) |
-| 16x9  | [![16x9](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x9.png)](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x9.png) |
-| 21x9  | [![21x9](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_21x9.png)](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_21x9.png) |
-| 4x3   | [![4x3](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_4x3.png)](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_4x3.png) |
+
 
 ## WS11WineCX20.0.4 (macOS Big Sur 32-bit)
 
@@ -106,7 +101,34 @@ These are period-correct studio monitors, highly recommended for testing the "an
 - [A beginner's guide for Thief 1: The Dark Project Classic](https://steamcommunity.com/sharedfiles/filedetails/?id=2731118621)
 - [https://thief.starforge.co.uk/images/5/56/Tutorials_SalvagesDromedMapsTutorialV2.pdf](https://thief.starforge.co.uk/images/5/56/Tutorials_SalvagesDromedMapsTutorialV2.pdf)
 - [https://www.ign.com/articles/2006/09/05/thief-ii-the-metal-age-dromed-faq-374813](https://www.ign.com/articles/2006/09/05/thief-ii-the-metal-age-dromed-faq-374813)
- 
+
+
+<table>
+<tr>
+  <td align="center"><b>16x10</b><br>
+      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x10.png">
+        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x10.png" height="180" alt="16x10">
+      </a>
+  </td>
+  <td align="center"><b>16x9</b><br>
+      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x9.png">
+        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x9.png" height="180" alt="16x9">
+      </a>
+  </td>
+  <td align="center"><b>21x9</b><br>
+      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_21x9.png">
+        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_21x9.png" height="180" alt="21x9">
+      </a>
+  </td>
+  <td align="center"><b>4x3</b><br>
+      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_4x3.png">
+        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_4x3.png" height="180" alt="4x3">
+      </a>
+  </td>
+</tr>
+</table>
+
+
 ## Dev Environment
 
 **Official White Wii Remote With Nunchuk — Tested And Working — £14.99**
