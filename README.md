@@ -51,6 +51,31 @@ These are period-correct studio monitors, highly recommended for testing the "an
 *(Note: These images are from an eBay listing, used here for product identification.)*
 
 
+<table>
+<tr>
+  <td align="center"><b>16x10</b><br>
+      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x10.png">
+        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x10.png" height="180" alt="16x10">
+      </a>
+  </td>
+  <td align="center"><b>16x9</b><br>
+      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x9.png">
+        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x9.png" height="180" alt="16x9">
+      </a>
+  </td>
+  <td align="center"><b>21x9</b><br>
+      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_21x9.png">
+        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_21x9.png" height="180" alt="21x9">
+      </a>
+  </td>
+  <td align="center"><b>4x3</b><br>
+      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_4x3.png">
+        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_4x3.png" height="180" alt="4x3">
+      </a>
+  </td>
+</tr>
+</table>
+
 
 
 ## WS11WineCX20.0.4 (macOS Big Sur 32-bit)
@@ -58,6 +83,8 @@ These are period-correct studio monitors, highly recommended for testing the "an
 [WS11WineCX20.0.4.tar.7z](https://github.com/vitor251093/porting-kit-engines/releases/download/wineskin/WS11WineCX20.0.4.tar.7z)
 
 [![Wine Windows games on macOS](https://raw.githubusercontent.com/igiteam/igi1-macbook-3d-workstation/refs/heads/main/wine-engine-config.png)](https://github.com/igiteam/wine_engines)
+
+---
 
 [![Thief Gold](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-box.png)](https://archive.org/details/ThiefGoldUSA)
 
@@ -102,31 +129,6 @@ These are period-correct studio monitors, highly recommended for testing the "an
 - [https://thief.starforge.co.uk/images/5/56/Tutorials_SalvagesDromedMapsTutorialV2.pdf](https://thief.starforge.co.uk/images/5/56/Tutorials_SalvagesDromedMapsTutorialV2.pdf)
 - [https://www.ign.com/articles/2006/09/05/thief-ii-the-metal-age-dromed-faq-374813](https://www.ign.com/articles/2006/09/05/thief-ii-the-metal-age-dromed-faq-374813)
 
-
-<table>
-<tr>
-  <td align="center"><b>16x10</b><br>
-      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x10.png">
-        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x10.png" height="180" alt="16x10">
-      </a>
-  </td>
-  <td align="center"><b>16x9</b><br>
-      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x9.png">
-        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x9.png" height="180" alt="16x9">
-      </a>
-  </td>
-  <td align="center"><b>21x9</b><br>
-      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_21x9.png">
-        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_21x9.png" height="180" alt="21x9">
-      </a>
-  </td>
-  <td align="center"><b>4x3</b><br>
-      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_4x3.png">
-        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_4x3.png" height="180" alt="4x3">
-      </a>
-  </td>
-</tr>
-</table>
 
 
 ## Dev Environment
