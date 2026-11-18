@@ -32,6 +32,7 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 [![Prince Of Persia - 3D - 1999 Ambient Soundtrack](https://img.youtube.com/vi/NtKA1B078Mg/hqdefault.jpg)](https://ytembed.macosxjs.com/?TnRLQTFCMDc4TWc)
 
+[![Thief 2 DromEd Tutorial 6 - Test, Package, and Release your FM](https://img.youtube.com/vi/qNrrejHZ1fM/maxresdefault.jpg)](https://ytembed.macosxjs.com/?cU5ycmVqSFoxZk0)
 
 ## Aureal A3D Audio 
 [https://readme.macosxjs.com/?url=https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal-a3d-sdk%2FREADME.md](https://readme.macosxjs.com/?url=https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal-a3d-sdk%2FREADME.md)
