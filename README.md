@@ -16,7 +16,7 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 [![Prince of Persia 3D in-game](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-prince-of-persia-3d-ingame.jpg)](https://archive.org/details/Prince_of_Persia_3D_USA)
 
-[![Prince of Persia 3D - Full Game Walkthrough](https://img.youtube.com/vi/_cal4mQnw6o/maxresdefault.jpg)](https://ytembed.macosxjs.com/?X2NhbDRtUW53Nm8)
+[![Prince of Persia 3D - Full Game Walkthrough](https://img.youtube.com/vi/ua5R1grwe6w/maxresdefault.jpg)](https://ytembed.macosxjs.com/?X2NhbDRtUW53Nm8)
 
 [![Prince of Persia DromEd](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-prince-of-persia-3d.png)](https://archive.org/details/Prince_of_Persia_3D_USA)
 
