@@ -14,6 +14,10 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 ## Prince of Persia 3D — the base of the gameplay
 [![Watch the video](https://img.youtube.com/vi/C0dHgEaUCEQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=ly859IV5gZA&list=PLb8oNKiUbnjFGRpy3A4vm7XLXu5yo-xZE&index=13)
 
+[DDFix and Enhanced Resolution Patch (including widescreen support)](https://www.ttlg.com/forums/showthread.php?t=121449)
+
+[Thief:The Dark Project original version(1.33) Win7-64Bit guide](https://www.gog.com/forum/thief_series/thiefthe_dark_project_original_version133_win764bit_guide)
+
 [![Prince of Persia 3D in-game](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-prince-of-persia-3d-ingame.jpg)](https://archive.org/details/Prince_of_Persia_3D_USA)
 
 [![Prince of Persia 3D - Full Game Walkthrough](https://img.youtube.com/vi/ua5R1grwe6w/maxresdefault.jpg)](https://ytembed.macosxjs.com/?X2NhbDRtUW53Nm8)
