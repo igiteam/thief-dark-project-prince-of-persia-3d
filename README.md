@@ -1,4 +1,4 @@
-# thief-gold-prince-of-persia-3d
+# thief-dark-project-prince-of-persia-3d
 ## Thief Gold: Prince of Persia 3D — The Remake
 A total conversion project that fuses the stealth-driven shadow gameplay and immersive-sim systems of *Thief Gold* with the acrobatic platforming, trap-laden level design, and atmospheric world of *Prince of Persia 3D* (1999), rebuilt as a standalone remake.
 
@@ -6,10 +6,10 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 [https://bug-free-couscous-vjxjx474766hpg57.github.dev/](https://bug-free-couscous-vjxjx474766hpg57.github.dev/)
 
 ## GitHub Treeview
-[https://treegit.macosxjs.com/?url=igiteam/thief-gold-prince-of-persia-3d](https://treegit.macosxjs.com/?url=igiteam/thief-gold-prince-of-persia-3d)
+[https://treegit.macosxjs.com/?url=igiteam/thief-dark-project-prince-of-persia-3d](https://treegit.macosxjs.com/?url=igiteam/thief-dark-project-prince-of-persia-3d)
 
 ## GitHub Tree API (Direct JSON)
-[https://api.github.com/repos/igiteam/thief-gold-prince-of-persia-3d/git/trees/main?recursive=1](https://api.github.com/repos/igiteam/thief-gold-prince-of-persia-3d/git/trees/main?recursive=1)
+[https://api.github.com/repos/igiteam/thief-dark-project-prince-of-persia-3d/git/trees/main?recursive=1](https://api.github.com/repos/igiteam/thief-dark-project-prince-of-persia-3d/git/trees/main?recursive=1)
 
 ## Prince of Persia 3D — the base of the gameplay
 [![Watch the video](https://img.youtube.com/vi/C0dHgEaUCEQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=ly859IV5gZA&list=PLb8oNKiUbnjFGRpy3A4vm7XLXu5yo-xZE&index=13)
@@ -18,11 +18,11 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 [Thief:The Dark Project original version(1.33) Win7-64Bit guide](https://www.gog.com/forum/thief_series/thiefthe_dark_project_original_version133_win764bit_guide)
 
-[![Prince of Persia 3D in-game](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-prince-of-persia-3d-ingame.jpg)](https://archive.org/details/Prince_of_Persia_3D_USA)
+[![Prince of Persia 3D in-game](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/thief-dark-project-prince-of-persia-3d-ingame.jpg)](https://archive.org/details/Prince_of_Persia_3D_USA)
 
 [![Prince of Persia 3D - Full Game Walkthrough](https://img.youtube.com/vi/ua5R1grwe6w/maxresdefault.jpg)](https://ytembed.macosxjs.com/?X2NhbDRtUW53Nm8)
 
-[![Prince of Persia DromEd](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-prince-of-persia-3d.png)](https://archive.org/details/Prince_of_Persia_3D_USA)
+[![Prince of Persia DromEd](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/thief-dark-project-prince-of-persia-3d.png)](https://archive.org/details/Prince_of_Persia_3D_USA)
 
 [![Thief: The Dark Project — Aureal Vortex vs. Sound Blaster Live — 3D Audio/HRTF comparison — A3D/EAX](https://img.youtube.com/vi/zQb6eG1THhA/maxresdefault.jpg)](https://ytembed.macosxjs.com/?elFiNmVHMVRIaEE)
 
@@ -39,11 +39,11 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 [![Thief 2 DromEd Tutorial 6 - Test, Package, and Release your FM](https://img.youtube.com/vi/qNrrejHZ1fM/maxresdefault.jpg)](https://ytembed.macosxjs.com/?cU5ycmVqSFoxZk0)
 
 ## Aureal A3D Audio 
-[https://readme.macosxjs.com/?url=https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal-a3d-sdk%2FREADME.md](https://readme.macosxjs.com/?url=https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal-a3d-sdk%2FREADME.md)
+[https://readme.macosxjs.com/?url=https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-dark-project-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal-a3d-sdk%2FREADME.md](https://readme.macosxjs.com/?url=https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-dark-project-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal-a3d-sdk%2FREADME.md)
 
-[https://html.macosxjs.com/?https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal_a3d_audio_research.html](https://html.macosxjs.com/?https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal_a3d_audio_research.html)
+[https://html.macosxjs.com/?https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-dark-project-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal_a3d_audio_research.html](https://html.macosxjs.com/?https%3A%2F%2Fgithub.com%2Figiteam%2Fthief-dark-project-prince-of-persia-3d%2Fblob%2Fmaster%2Faureal_a3d_audio_research.html)
 
-[https://html.macosxjs.com/?https%3A%2F%2Fraw.githubusercontent.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Frefs%2Fheads%2Fmaster%2Faureal-a3d-sdk%2Fdecompiling-a3d-chip.html](https://html.macosxjs.com/?https%3A%2F%2Fraw.githubusercontent.com%2Figiteam%2Fthief-gold-prince-of-persia-3d%2Frefs%2Fheads%2Fmaster%2Faureal-a3d-sdk%2Fdecompiling-a3d-chip.html)
+[https://html.macosxjs.com/?https%3A%2F%2Fraw.githubusercontent.com%2Figiteam%2Fthief-dark-project-prince-of-persia-3d%2Frefs%2Fheads%2Fmaster%2Faureal-a3d-sdk%2Fdecompiling-a3d-chip.html](https://html.macosxjs.com/?https%3A%2F%2Fraw.githubusercontent.com%2Figiteam%2Fthief-dark-project-prince-of-persia-3d%2Frefs%2Fheads%2Fmaster%2Faureal-a3d-sdk%2Fdecompiling-a3d-chip.html)
 
 ### Reference Images: Sony MDR-V6
 
@@ -51,7 +51,7 @@ These are period-correct studio monitors, highly recommended for testing the "an
 
 | Image 1 | Image 2 | Image 3 | Image 4 |
 | :---: | :---: | :---: | :---: |
-| ![Sony MDR-V6 Image 1](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_1.png) | ![Sony MDR-V6 Image 2](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_2.png) | ![Sony MDR-V6 Image 3](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_3.png) | ![Sony MDR-V6 Image 4](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_4.png) |
+| ![Sony MDR-V6 Image 1](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_1.png) | ![Sony MDR-V6 Image 2](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_2.png) | ![Sony MDR-V6 Image 3](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_3.png) | ![Sony MDR-V6 Image 4](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/sony_mdr_v6_4.png) |
 
 *(Note: These images are from an eBay listing, used here for product identification.)*
 
@@ -59,23 +59,23 @@ These are period-correct studio monitors, highly recommended for testing the "an
 <table>
 <tr>
   <td align="center"><b>16x10</b><br>
-      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x10.png">
-        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x10.png" height="180" alt="16x10">
+      <a href="https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/ingame_16x10.png">
+        <img src="https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/ingame_16x10.png" height="180" alt="16x10">
       </a>
   </td>
   <td align="center"><b>16x9</b><br>
-      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x9.png">
-        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_16x9.png" height="180" alt="16x9">
+      <a href="https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/ingame_16x9.png">
+        <img src="https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/ingame_16x9.png" height="180" alt="16x9">
       </a>
   </td>
   <td align="center"><b>21x9</b><br>
-      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_21x9.png">
-        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_21x9.png" height="180" alt="21x9">
+      <a href="https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/ingame_21x9.png">
+        <img src="https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/ingame_21x9.png" height="180" alt="21x9">
       </a>
   </td>
   <td align="center"><b>4x3</b><br>
-      <a href="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_4x3.png">
-        <img src="https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/ingame_4x3.png" height="180" alt="4x3">
+      <a href="https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/ingame_4x3.png">
+        <img src="https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/ingame_4x3.png" height="180" alt="4x3">
       </a>
   </td>
 </tr>
@@ -91,11 +91,11 @@ These are period-correct studio monitors, highly recommended for testing the "an
 
 ---
 
-[![Thief Gold](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief-gold-box.png)](https://archive.org/details/ThiefGoldUSA)
+[![Thief Gold](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/thief-gold-box.png)](https://archive.org/details/ThiefGoldUSA)
 
-[![Thief Gold](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/thief_boxart.jpg)](https://archive.org/details/thief-src-libs)
+[![Thief Gold](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/thief_boxart.jpg)](https://archive.org/details/thief-src-libs)
 
-[![Prince of Persia 3D](https://raw.githubusercontent.com/igiteam/thief-gold-prince-of-persia-3d/refs/heads/master/prince-of-persia-3d-box.png)](https://archive.org/details/prince-of-persia-3-d-definitive-edition)
+[![Prince of Persia 3D](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/prince-of-persia-3d-box.png)](https://archive.org/details/prince-of-persia-3-d-definitive-edition)
 
 ---
 
