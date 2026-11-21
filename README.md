@@ -1,6 +1,6 @@
 # thief-dark-project-prince-of-persia-3d
-## Thief Gold: Prince of Persia 3D — The Remake
-A total conversion project that fuses the stealth-driven shadow gameplay and immersive-sim systems of *Thief Gold* with the acrobatic platforming, trap-laden level design, and atmospheric world of *Prince of Persia 3D* (1999), rebuilt as a standalone remake.
+## Thief Dark Project: Prince of Persia 3D — The Remake
+A total conversion project that fuses the stealth-driven shadow gameplay and immersive-sim systems of *Thief Dark Project* with the acrobatic platforming, trap-laden level design, and atmospheric world of *Prince of Persia 3D* (1999), rebuilt as a standalone remake.
 
 ## GitHub Treeview
 [https://treegit.macosxjs.com/?url=igiteam/thief-dark-project-prince-of-persia-3d](https://treegit.macosxjs.com/?url=igiteam/thief-dark-project-prince-of-persia-3d)
