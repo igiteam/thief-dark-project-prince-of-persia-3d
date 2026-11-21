@@ -2,9 +2,6 @@
 ## Thief Gold: Prince of Persia 3D — The Remake
 A total conversion project that fuses the stealth-driven shadow gameplay and immersive-sim systems of *Thief Gold* with the acrobatic platforming, trap-laden level design, and atmospheric world of *Prince of Persia 3D* (1999), rebuilt as a standalone remake.
 
-## Github Codespace
-[https://bug-free-couscous-vjxjx474766hpg57.github.dev/](https://bug-free-couscous-vjxjx474766hpg57.github.dev/)
-
 ## GitHub Treeview
 [https://treegit.macosxjs.com/?url=igiteam/thief-dark-project-prince-of-persia-3d](https://treegit.macosxjs.com/?url=igiteam/thief-dark-project-prince-of-persia-3d)
 
@@ -55,6 +52,7 @@ These are period-correct studio monitors, highly recommended for testing the "an
 
 *(Note: These images are from an eBay listing, used here for product identification.)*
 
+![Turtle Beach Aureal A3D](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/aureal-a3d-sdk/Turtle%20Beach%20Montego%20Aureal%20Vortex%201%20PCI%20Sound%20Card%20Vintage%20A3D.png)
 
 <table>
 <tr>
