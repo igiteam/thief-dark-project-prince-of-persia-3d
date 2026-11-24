@@ -19,7 +19,7 @@ A total conversion project that fuses the stealth-driven shadow gameplay and imm
 
 [![Prince of Persia 3D - Full Game Walkthrough](https://img.youtube.com/vi/ua5R1grwe6w/maxresdefault.jpg)](https://ytembed.macosxjs.com/?X2NhbDRtUW53Nm8)
 
-[![Prince of Persia 3D - Arx Fatalis Head](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/prince-of-persia-3d-arx-fatalis-head.PNG)](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/prince-of-persia-3d-arx-fatalis-head.PNG)
+[![Prince of Persia 3D - Arx Fatalis Head](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/prince-of-persia-3d-arx-fatalis-head.png)](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/prince-of-persia-3d-arx-fatalis-head.PNG)
 
 [![Prince of Persia DromEd](https://raw.githubusercontent.com/igiteam/thief-dark-project-prince-of-persia-3d/refs/heads/master/thief-dark-project-prince-of-persia-3d.png)](https://archive.org/details/Prince_of_Persia_3D_USA)
 
