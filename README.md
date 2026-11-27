@@ -100,6 +100,7 @@ These are period-correct studio monitors, highly recommended for testing the "an
 ---
 
 ### Reference Links
+- [https://github.com/vfig](https://github.com/vfig)
 - [https://www.moddb.com/games/thief-the-dark-project/mods](https://www.moddb.com/games/thief-the-dark-project/mods)
 - [https://dromed.whoopdedo.org](https://dromed.whoopdedo.org)
 - [https://www.gamefront.com/games/thief](https://www.gamefront.com/games/thief)
