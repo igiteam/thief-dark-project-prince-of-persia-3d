@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://songdrop.fra1.cdn.digitaloceanspaces.com/rtx/face_atlas_gpt.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expression Atlas HD + GPT-Image</title>
+
+    <link rel="icon" href="https://cdn.gitgpt.chat/rtx/images/face_animation_table.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://cdn.gitgpt.chat/rtx/images/face_animation_table.png" sizes="180x180">
+    <link rel="icon" type="image/png" href="https://cdn.gitgpt.chat/rtx/images/face_animation_table.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://cdn.gitgpt.chat/rtx/images/face_animation_table.png" sizes="512x512">
+    <meta itemprop="name" content="Expression Atlas HD + GPT-Image">
+    <meta property="og:title" content="Expression Atlas HD + GPT-Image">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta name="twitter:title" content="Expression Atlas HD + GPT-Image">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: #eee;
+            font-family: monospace;
+            display: block;
+        }
+
+        .atlas-wrapper {
+            position: relative;
+            margin: 20px auto;
+            width: fit-content;
+        }
+
+        .atlas {
+            position: relative;
+            width: 512px;
+            height: 512px;
+            background-color: magenta;
+            border: 2px solid #000;
+        }
+
+        .tile {
+            position: absolute;
+            /* border: 1px solid #333; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            text-align: center;
+            box-sizing: border-box;
+            color: #111;
+            white-space: pre-line;
+            background-color: white;
+        }
+
+        .ruler-x,
+        .ruler-y {
+            position: absolute;
+            font-size: 12px;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .ruler-x {
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .ruler-y {
+            top: 0;
+            left: -40px;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            height: 100%;
+            text-align: center;
+        }
+
+        .switch-btn {
+            position: fixed;
+            bottom: 10px;
+            right: calc(100%/2);
+            padding: 6px 12px;
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #drop-area {
+            border: 2px dashed #666;
+            padding: 20px;
+            text-align: center;
+            margin: 20px auto;
+            width: 300px;
+            cursor: pointer;
+        }
+
+        #drop-area.dragover {
+            border-color: #ff6600;
+            background-color: rgba(255, 102, 0, 0.1);
+        }
+
+        #generated-img {
+            max-width: 512px;
+            margin-top: 20px;
+            border: 2px solid #333;
+        }
+
+        .left_top_explanation {
+            position: fixed;
+            left: 5px;
+            top: 5px;
+            z-index: 1000;
+        }
+
+        /* Top right gallery */
+        #faces-gallery {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            z-index: 1000;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        #faces-gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="left_top_explanation">
+        <div id="drop-area">Drag &amp; Drop PNG/BMP here</div>
+        <img src="https://cdn.gitgpt.chat/rtx/images/face_animation_table.png" class="face-img" id="face-default" style="width: 200px;">
+        <pre><code>
+Input: 
+Artist exports a face texture 
+from MilkShape (.png or .bmp).
+Output:
+Four base faces:
+Default
+Grin
+Wounded
+Dead
+A pixel-perfect emotion_atlas JSON
+describing eyes and mouth positions
+(like your atlasData).</code>
+        </pre>
+    </div>
+    <!-- Top right faces gallery -->
+    <div id="faces-gallery">
+        <div>default_face_512x512</div>
+        <img id="face-default" src="https://cdn.gitgpt.chat/rtx/images/Face_MaxPayne_Default.png" alt="Default">
+        <div>grin_face_512x512</div>
+        <img id="face-grin" src="https://cdn.gitgpt.chat/rtx/images/Face_MaxPayne_Grin.png" alt="Grin">
+        <div>wounded_face_512x512</div>
+        <img id="face-wounded" src="https://cdn.gitgpt.chat/rtx/images/Face_MaxPayne_Wounded.png" alt="Wounded">
+        <div>dead_face_512x512</div>
+        <img id="face-dead" src="https://cdn.gitgpt.chat/rtx/images/Face_MaxPayne_Death.png" alt="Dead">
+    </div>
+    <div class="atlas-wrapper">
+        <div class="ruler-x">&lt;--- 512 px / 1024 px --&gt;</div>
+        <div class="ruler-y">512 px / 1024 px</div>
+        <div id="atlas" class="atlas" style="width: 512px; height: 512px;"><div class="tile" style="left: 0px; top: 0px; width: 170px; height: 85px;">neutral eyes
+170×85</div><div class="tile" style="left: 171px; top: 0px; width: 170px; height: 85px;">angry eyes
+170×85</div><div class="tile" style="left: 342px; top: 0px; width: 170px; height: 85px;">surprised eyes
+170×85</div><div class="tile" style="left: 0px; top: 86px; width: 170px; height: 85px;">blinking eyes
+170×85</div><div class="tile" style="left: 171px; top: 86px; width: 170px; height: 85px;">eyes looking right
+170×85</div><div class="tile" style="left: 342px; top: 86px; width: 170px; height: 85px;">eyes looking left
+170×85</div><div class="tile" style="left: 0px; top: 170px; width: 85px; height: 85px;">neutral mouth
+85×85</div><div class="tile" style="left: 85px; top: 170px; width: 85px; height: 85px;">small mouth
+85×85</div><div class="tile" style="left: 170px; top: 170px; width: 85px; height: 85px;">medium mouth
+85×85</div><div class="tile" style="left: 255px; top: 170px; width: 85px; height: 85px;">wide mouth
+85×85</div><div class="tile" style="left: 0px; top: 255px; width: 85px; height: 85px;">A
+85×85</div><div class="tile" style="left: 85px; top: 255px; width: 85px; height: 85px;">B
+85×85</div><div class="tile" style="left: 170px; top: 255px; width: 85px; height: 85px;">C
+85×85</div><div class="tile" style="left: 255px; top: 255px; width: 85px; height: 85px;">D
+85×85</div><div class="tile" style="left: 0px; top: 340px; width: 85px; height: 85px;">E
+85×85</div><div class="tile" style="left: 85px; top: 340px; width: 85px; height: 85px;">F
+85×85</div><div class="tile" style="left: 170px; top: 340px; width: 85px; height: 85px;">G
+85×85</div><div class="tile" style="left: 255px; top: 340px; width: 85px; height: 85px;">H
+85×85</div><div class="tile" style="left: 0px; top: 425px; width: 85px; height: 85px;">X
+85×85</div></div>
+    </div>
+    <button class="switch-btn" onclick="toggleAtlas()">Switch 512 / 1024</button>
+
+    <p id="file-name"></p>
+    <button id="generate-default">Default</button>
+    <button id="generate-grin">Grin</button>
+    <button id="generate-wounded">Wounded</button>
+    <button id="generate-dead">Dead</button>
+    <button id="generate-atlas">Emotion Atlas</button>
+    <button id="save-expression" style="display: block; margin-top: 4px;">Save as BMP/TGA/PNG (512x512)</button>
+    <script>
+        // Atlas JSON
+        const atlasData = {
+            "512": { "eyes": { "neutral eyes": { x: 0, y: 0, w: 170, h: 85 }, "angry eyes": { x: 171, y: 0, w: 170, h: 85 }, "surprised eyes": { x: 342, y: 0, w: 170, h: 85 }, "blinking eyes": { x: 0, y: 86, w: 170, h: 85 }, "eyes looking right": { x: 171, y: 86, w: 170, h: 85 }, "eyes looking left": { x: 342, y: 86, w: 170, h: 85 } }, "mouth": { "neutral mouth": { x: 0, y: 170, w: 85, h: 85 }, "small mouth": { x: 85, y: 170, w: 85, h: 85 }, "medium mouth": { x: 170, y: 170, w: 85, h: 85 }, "wide mouth": { x: 255, y: 170, w: 85, h: 85 }, "A": { x: 0, y: 255, w: 85, h: 85 }, "B": { x: 85, y: 255, w: 85, h: 85 }, "C": { x: 170, y: 255, w: 85, h: 85 }, "D": { x: 255, y: 255, w: 85, h: 85 }, "E": { x: 0, y: 340, w: 85, h: 85 }, "F": { x: 85, y: 340, w: 85, h: 85 }, "G": { x: 170, y: 340, w: 85, h: 85 }, "H": { x: 255, y: 340, w: 85, h: 85 }, "X": { x: 0, y: 425, w: 85, h: 85 } } },
+            "1024": { "eyes": { "neutral eyes": { x: 0, y: 0, w: 340, h: 170 }, "angry eyes": { x: 342, y: 0, w: 340, h: 170 }, "surprised eyes": { x: 684, y: 0, w: 340, h: 170 }, "blinking eyes": { x: 0, y: 172, w: 340, h: 170 }, "eyes looking right": { x: 342, y: 172, w: 340, h: 170 }, "eyes looking left": { x: 684, y: 172, w: 340, h: 170 } }, "mouth": { "neutral mouth": { x: 0, y: 340, w: 170, h: 170 }, "small mouth": { x: 170, y: 340, w: 170, h: 170 }, "medium mouth": { x: 340, y: 340, w: 170, h: 170 }, "wide mouth": { x: 510, y: 340, w: 170, h: 170 }, "A": { x: 0, y: 510, w: 170, h: 170 }, "B": { x: 170, y: 510, w: 170, h: 170 }, "C": { x: 340, y: 510, w: 170, h: 170 }, "D": { x: 510, y: 510, w: 170, h: 170 }, "E": { x: 0, y: 680, w: 170, h: 170 }, "F": { x: 170, y: 680, w: 170, h: 170 }, "G": { x: 340, y: 680, w: 170, h: 170 }, "H": { x: 510, y: 680, w: 170, h: 170 }, "X": { x: 0, y: 850, w: 170, h: 170 } } }
+        };
+
+        let currentSize = "512";
+
+        function drawAtlas() {
+            const atlas = document.getElementById('atlas');
+            atlas.innerHTML = '';
+            const data = atlasData[currentSize];
+
+            for (const [name, tile] of Object.entries(data.eyes)) {
+                const div = document.createElement('div');
+                div.className = 'tile';
+                div.style.left = tile.x + 'px';
+                div.style.top = tile.y + 'px';
+                div.style.width = tile.w + 'px';
+                div.style.height = tile.h + 'px';
+                div.textContent = name + `\n${tile.w}×${tile.h}`;
+                atlas.appendChild(div);
+            }
+            for (const [name, tile] of Object.entries(data.mouth)) {
+                const div = document.createElement('div');
+                div.className = 'tile';
+                div.style.left = tile.x + 'px';
+                div.style.top = tile.y + 'px';
+                div.style.width = tile.w + 'px';
+                div.style.height = tile.h + 'px';
+                div.textContent = name + `\n${tile.w}×${tile.h}`;
+                atlas.appendChild(div);
+            }
+
+            atlas.style.width = currentSize + 'px';
+            atlas.style.height = currentSize + 'px';
+        }
+
+        function toggleAtlas() {
+            currentSize = currentSize === "512" ? "1024" : "512";
+            drawAtlas();
+        }
+
+        drawAtlas();
+
+        // Drag & Drop for GPT-Image-1
+        const dropArea = document.getElementById('drop-area');
+        let base64Image = null;
+
+        dropArea.addEventListener('dragover', e => { e.preventDefault(); dropArea.classList.add('dragover'); });
+        dropArea.addEventListener('dragleave', () => dropArea.classList.remove('dragover'));
+        dropArea.addEventListener('drop', e => {
+            e.preventDefault(); dropArea.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            if (!file || !file.type.match(/image\/(png|bmp)/)) return alert('Only PNG/BMP allowed');
+            document.getElementById('file-name').textContent = file.name;
+
+            const reader = new FileReader();
+            reader.onload = e => base64Image = e.target.result.split(',')[1];
+            reader.readAsDataURL(file);
+        });
+
+        const buttons = [
+            { id: 'generate-default', face: 'default' },
+            { id: 'generate-grin', face: 'grin' },
+            { id: 'generate-wounded', face: 'wounded' },
+            { id: 'generate-dead', face: 'dead' },
+            { id: 'generate-atlas', face: 'atlas' }
+        ];
+
+        buttons.forEach(({ id, face }) => {
+            document.getElementById(id).addEventListener('click', async () => {
+                if (!base64Image) return alert('Please drop an image first');
+
+                const prompt = face === 'atlas'
+                    ? `Generate emotion atlas JSON for this face:\n${JSON.stringify(atlasData[currentSize])}`
+                    : `Generate "${face}" face from this base image:\n${JSON.stringify(atlasData[currentSize])}`;
+
+                try {
+                    const res = await fetch(`${API_URL}/edits?api-version=${API_VERSION}`, {
+                        method: 'POST',
+                        headers: { 'Authorization': `Bearer ${API_KEY}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ prompt, n: 1, size: currentSize, image: base64Image, output_format: 'png' })
+                    });
+
+                    const data = await res.json();
+                    if (face === 'atlas') {
+                        console.log('Emotion Atlas JSON:', data);
+                        alert('Check console for JSON');
+                    } else {
+                        document.getElementById(`face-${face}`).src = `data:image/png;base64,${data.data[0].b64_json}`;
+                    }
+
+                } catch (err) {
+                    console.error(err);
+                    alert('Error generating image');
+                }
+            });
+        });
+
+        // Generate button
+        // document.getElementById('generate-btn').addEventListener('click', async () => {
+        //     if (!base64Image) return alert('Please drop an image first');
+
+        //     const prompt = `Use this expression atlas JSON to create a character layout:\n${JSON.stringify(atlasData[currentSize])}`;
+        //     const API_URL = 'YOUR_API_URL';
+        //     const API_KEY = 'YOUR_API_KEY';
+        //     const API_VERSION = 'YOUR_API_VERSION';
+
+        //     const body = {
+        //         prompt,
+        //         n: 1,
+        //         size: currentSize,
+        //         quality: 'high',
+        //         image: base64Image,
+        //         output_format: 'png'
+        //     };
+
+        //     try {
+        //         const res = await fetch(`${API_URL}/edits?api-version=${API_VERSION}`, {
+        //             method: 'POST',
+        //             headers: { 'Authorization': `Bearer ${API_KEY}`, 'Content-Type': 'application/json' },
+        //             body: JSON.stringify(body)
+        //         });
+        //         const data = await res.json();
+        //         const b64 = data.data[0].b64_json;
+        //         if (!b64) throw new Error('No image returned');
+        //         document.getElementById('generated-img').src = `data:image/png;base64,${b64}`;
+        //     } catch (err) {
+        //         console.error(err);
+        //         alert('Error generating image');
+        //     }
+        // });
+
+    </script>
+    <script src="./Expression Atlas HD + GPT-Image_files/html2canvas.min.js.download"></script>
+    <script>
+        // ✅ Save currently visible atlas at 512x512 using Hermite resampling
+        document.getElementById('save-expression').addEventListener('click', async () => {
+            const atlas = document.getElementById('atlas');
+            if (!atlas) return alert('❌ No atlas element found.');
+
+            try {
+                // Capture ultra-high resolution
+                const highResScale = 12; // 12× internal resolution for ultra-sharp edges
+                const highResCanvas = await html2canvas(atlas, {
+                    backgroundColor: null,
+                    scale: highResScale,
+                    useCORS: true,
+                    logging: false
+                });
+
+                // Hermite resample to 512×512
+                const downscaledCanvas = document.createElement('canvas');
+                downscaledCanvas.width = 512;
+                downscaledCanvas.height = 512;
+
+                resampleHermite(highResCanvas, downscaledCanvas, 512, 512);
+
+                // Save PNG
+                downscaledCanvas.toBlob(blob => {
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = 'emotion_atlas_512x512.png';
+                    link.click();
+                }, 'image/png');
+
+            } catch (err) {
+                console.error(err);
+                alert('❌ Failed to save atlas.');
+            }
+        });
+
+        /**
+         * Hermite resample high-res canvas into target canvas
+         * @param {HTMLCanvasElement} srcCanvas - source canvas
+         * @param {HTMLCanvasElement} destCanvas - destination canvas
+         * @param {number} width - target width
+         * @param {number} height - target height
+         */
+        function resampleHermite(srcCanvas, destCanvas, width, height) {
+            const srcCtx = srcCanvas.getContext('2d');
+            const destCtx = destCanvas.getContext('2d');
+
+            const srcImg = srcCtx.getImageData(0, 0, srcCanvas.width, srcCanvas.height);
+            const srcData = srcImg.data;
+            const destImg = destCtx.createImageData(width, height);
+            const destData = destImg.data;
+
+            const ratio_w = srcCanvas.width / width;
+            const ratio_h = srcCanvas.height / height;
+            const ratio_w_half = Math.ceil(ratio_w / 2);
+            const ratio_h_half = Math.ceil(ratio_h / 2);
+
+            for (let j = 0; j < height; j++) {
+                for (let i = 0; i < width; i++) {
+                    const x2 = (i + j * width) * 4;
+                    let r = 0, g = 0, b = 0, a = 0;
+                    let w_sum = 0, w_a_sum = 0;
+
+                    const center_y = (j + 0.5) * ratio_h;
+                    const yy_start = Math.floor(j * ratio_h);
+                    const yy_stop = Math.ceil((j + 1) * ratio_h);
+
+                    for (let yy = yy_start; yy < yy_stop; yy++) {
+                        const dy = Math.abs(center_y - (yy + 0.5)) / ratio_h_half;
+                        const center_x = (i + 0.5) * ratio_w;
+                        const w0 = dy * dy;
+
+                        const xx_start = Math.floor(i * ratio_w);
+                        const xx_stop = Math.ceil((i + 1) * ratio_w);
+
+                        for (let xx = xx_start; xx < xx_stop; xx++) {
+                            const dx = Math.abs(center_x - (xx + 0.5)) / ratio_w_half;
+                            let w = Math.sqrt(w0 + dx * dx);
+                            if (w >= 1) continue;
+                            w = 2 * w * w * w - 3 * w * w + 1; // Hermite weight
+
+                            const pos = 4 * (xx + yy * srcCanvas.width);
+                            const alpha = srcData[pos + 3] / 255;
+
+                            r += w * srcData[pos] * alpha;
+                            g += w * srcData[pos + 1] * alpha;
+                            b += w * srcData[pos + 2] * alpha;
+                            a += w * srcData[pos + 3];
+                            w_sum += w * alpha;
+                            w_a_sum += w;
+                        }
+                    }
+
+                    destData[x2] = r / w_sum || 0;
+                    destData[x2 + 1] = g / w_sum || 0;
+                    destData[x2 + 2] = b / w_sum || 0;
+                    destData[x2 + 3] = a / w_a_sum || 255;
+                }
+            }
+
+            destCtx.putImageData(destImg, 0, 0);
+        }
+    </script>
+
+
+
+</body></html>

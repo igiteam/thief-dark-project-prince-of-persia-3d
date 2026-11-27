@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://songdrop.fra1.cdn.digitaloceanspaces.com/rtx/digimask_photoapp.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Face Scan Photo Capture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+        }
+
+        .container {
+            max-width: 450px;
+            width: 100%;
+            background: #1a1a1a;
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+            border: 1px solid #2a2a2a;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            font-weight: 700;
+            font-size: 26px;
+            background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .photo-box {
+            background: #121212;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid #2a2a2a;
+            transition: border-color 0.3s;
+            position: relative;
+        }
+
+        .photo-box.has-photo {
+            border-color: #4CAF50;
+        }
+
+        .photo-box .label {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            z-index: 2;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .photo-box .label .check {
+            display: none;
+            color: #4CAF50;
+            margin-left: 4px;
+        }
+
+        .photo-box.has-photo .label .check {
+            display: inline;
+        }
+
+        .photo-preview {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            min-height: 150px;
+        }
+
+        .photo-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-preview .placeholder {
+            color: #444;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .photo-preview .placeholder svg {
+            display: block;
+            margin: 0 auto 8px;
+            opacity: 0.3;
+        }
+
+        .photo-preview .placeholder span {
+            font-size: 12px;
+        }
+
+        .photo-actions {
+            display: flex;
+            gap: 6px;
+            padding: 10px 12px 12px;
+            background: #0e0e0e;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .photo-actions .btn {
+            flex: 1;
+            padding: 8px 6px;
+            border: none;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #fff;
+            background: #2a2a2a;
+            touch-action: manipulation;
+            text-align: center;
+        }
+
+        .photo-actions .btn:active {
+            transform: scale(0.94);
+        }
+
+        .btn-camera {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .btn-gallery {
+            background: #2a2a2a;
+        }
+
+        .btn-clear {
+            background: #2a2a2a;
+            color: #e74c3c;
+        }
+
+        .btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        /* Download buttons - 4 buttons now */
+        .bottom-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .btn-download {
+            padding: 12px 8px;
+            border: none;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #fff;
+            touch-action: manipulation;
+            text-align: center;
+        }
+
+        .btn-download:active {
+            transform: scale(0.96);
+        }
+
+        .btn-download:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .btn-download.front-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .btn-download.side-btn {
+            background: linear-gradient(135deg, #ffd93d, #f39c12);
+            color: #1a1a1a;
+        }
+
+        .btn-download.both-btn {
+            background: linear-gradient(135deg, #00b894, #00a381);
+            grid-column: 1 / -1;
+        }
+
+        .btn-download.fixed-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            grid-column: 1 / -1;
+        }
+
+        .status {
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            margin-top: 14px;
+            padding: 10px;
+            background: #0e0e0e;
+            border-radius: 12px;
+            min-height: 38px;
+            border: 1px solid #1a1a1a;
+        }
+
+        .status.success {
+            color: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .status.error {
+            color: #e74c3c;
+            border-color: #e74c3c;
+        }
+
+        /* Camera overlay */
+        .camera-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #000;
+            z-index: 1000;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .camera-overlay.active {
+            display: flex;
+        }
+
+        .camera-overlay .cam-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10;
+            flex-shrink: 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .camera-overlay .cam-top .cam-title {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .camera-overlay .cam-top .cam-title .mode-front {
+            color: #667eea;
+        }
+
+        .camera-overlay .cam-top .cam-title .mode-side {
+            color: #ffd93d;
+        }
+
+        .camera-overlay .cam-top .btn-close-cam {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 4px 12px;
+            opacity: 0.7;
+        }
+
+        .camera-overlay .cam-top .btn-close-cam:hover {
+            opacity: 1;
+        }
+
+        .camera-overlay .cam-video-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            overflow: hidden;
+            position: relative;
+            min-height: 0;
+            padding: 20px;
+        }
+
+        .camera-overlay .cam-video-wrap .cam-square {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            aspect-ratio: 1/1;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* MIRRORED CAMERA */
+        .camera-overlay .cam-video-wrap video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: #000;
+            transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+        }
+
+        .camera-overlay .face-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: 70%;
+            border: 3px solid rgba(255, 0, 0, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.15), inset 0 0 30px rgba(255, 0, 0, 0.05);
+            pointer-events: none;
+            animation: pulse-box 2s ease-in-out infinite;
+        }
+
+        .camera-overlay .face-box::before,
+        .camera-overlay .face-box::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-color: rgba(255, 0, 0, 0.9);
+            border-style: solid;
+            border-width: 0;
+        }
+
+        .camera-overlay .face-box::before {
+            top: -2px;
+            left: -2px;
+            border-top-width: 4px;
+            border-left-width: 4px;
+            border-radius: 4px 0 0 0;
+        }
+
+        .camera-overlay .face-box::after {
+            bottom: -2px;
+            right: -2px;
+            border-bottom-width: 4px;
+            border-right-width: 4px;
+            border-radius: 0 0 4px 0;
+        }
+
+        .camera-overlay .face-guide {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+            pointer-events: none;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 4px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            white-space: nowrap;
+        }
+
+        .camera-overlay .face-guide-top {
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+            pointer-events: none;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 3px 14px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            white-space: nowrap;
+        }
+
+        @keyframes pulse-box {
+
+            0%,
+            100% {
+                border-color: rgba(255, 50, 50, 0.8);
+                box-shadow: 0 0 30px rgba(255, 0, 0, 0.15);
+            }
+
+            50% {
+                border-color: rgba(255, 100, 100, 0.9);
+                box-shadow: 0 0 50px rgba(255, 0, 0, 0.25);
+            }
+        }
+
+        .camera-overlay .cam-bottom {
+            padding: 16px 20px;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-shrink: 0;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .camera-overlay .cam-bottom .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 17px;
+            cursor: pointer;
+            touch-action: manipulation;
+            color: #fff;
+            min-width: 100px;
+            transition: transform 0.15s;
+        }
+
+        .camera-overlay .cam-bottom .btn:active {
+            transform: scale(0.94);
+        }
+
+        .camera-overlay .cam-bottom .btn-capture {
+            background: linear-gradient(135deg, #4CAF50, #2d8f5e);
+            box-shadow: 0 4px 20px rgba(76, 175, 80, 0.3);
+        }
+
+        .camera-overlay .cam-bottom .btn-close-cam2 {
+            background: #444;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 420px) {
+            .container {
+                padding: 16px;
+            }
+
+            .photo-actions .btn {
+                font-size: 11px;
+                padding: 6px 4px;
+            }
+
+            .photo-box .label {
+                font-size: 10px;
+                padding: 3px 10px;
+            }
+
+            .bottom-actions {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .btn-download.both-btn {
+                grid-column: 1 / -1;
+            }
+
+            .btn-download.fixed-btn {
+                grid-column: 1 / -1;
+            }
+
+            .camera-overlay .cam-bottom .btn {
+                padding: 12px 20px;
+                font-size: 15px;
+                min-width: 70px;
+            }
+
+            .camera-overlay .face-box {
+                width: 65%;
+                height: 75%;
+            }
+
+            .camera-overlay .face-guide {
+                font-size: 10px;
+                padding: 3px 12px;
+                bottom: 8%;
+            }
+
+            .camera-overlay .face-guide-top {
+                font-size: 9px;
+                padding: 2px 10px;
+                top: 6%;
+            }
+
+            .camera-overlay .cam-video-wrap {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .camera-overlay .cam-bottom .btn {
+                padding: 10px 14px;
+                font-size: 13px;
+                min-width: 60px;
+            }
+
+            .camera-overlay .face-box {
+                width: 70%;
+                height: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>📸 Face Scan</h1>
+            <p>Take front + side photos for your 3D head</p>
+        </div>
+
+        <div class="photo-grid">
+            <div class="photo-box" id="frontBox">
+                <div class="label">FRONT <span class="check">✓</span></div>
+                <div class="photo-preview" id="frontPreview" onclick="takePhoto(&#39;front&#39;)">
+                    <div class="placeholder">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                            <circle cx="12" cy="13" r="4"></circle>
+                        </svg>
+                        <span>Tap to add</span>
+                    </div>
+                </div>
+                <div class="photo-actions">
+                    <button class="btn btn-camera" onclick="takePhoto(&#39;front&#39;)">📷</button>
+                    <button class="btn btn-gallery" onclick="choosePhoto(&#39;front&#39;)">🖼️</button>
+                    <button class="btn btn-clear" onclick="clearPhoto(&#39;front&#39;)">✕</button>
+                </div>
+            </div>
+
+            <div class="photo-box" id="sideBox">
+                <div class="label">SIDE <span class="check">✓</span></div>
+                <div class="photo-preview" id="sidePreview" onclick="takePhoto(&#39;side&#39;)">
+                    <div class="placeholder">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                            <circle cx="12" cy="13" r="4"></circle>
+                        </svg>
+                        <span>Tap to add</span>
+                    </div>
+                </div>
+                <div class="photo-actions">
+                    <button class="btn btn-camera" onclick="takePhoto(&#39;side&#39;)">📷</button>
+                    <button class="btn btn-gallery" onclick="choosePhoto(&#39;side&#39;)">🖼️</button>
+                    <button class="btn btn-clear" onclick="clearPhoto(&#39;side&#39;)">✕</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: 4 download buttons -->
+        <div class="bottom-actions">
+            <button class="btn-download front-btn" id="downloadFrontBtn" onclick="downloadFront()" disabled="">
+                ⬇️ Front
+            </button>
+            <button class="btn-download side-btn" id="downloadSideBtn" onclick="downloadSide()" disabled="">
+                ⬇️ Side
+            </button>
+            <button class="btn-download both-btn" id="downloadBothBtn" onclick="downloadBoth()" disabled="">
+                ⬇️ Download Both
+            </button>
+            <button class="btn-download fixed-btn" id="downloadFixedBtn" onclick="downloadBothFixed()" disabled="">
+                🔄 EXIF Fixed (Both)
+            </button>
+        </div>
+
+        <div class="status" id="status">📱 Add front and side photos</div>
+    </div>
+
+    <!-- Camera Overlay -->
+    <div class="camera-overlay" id="cameraOverlay">
+        <div class="cam-top">
+            <span class="cam-title" id="camTitle"><span class="mode-front">📷 FRONT</span></span>
+            <button class="btn-close-cam" onclick="closeCamera()">✕</button>
+        </div>
+
+        <div class="cam-video-wrap">
+            <div class="cam-square">
+                <video id="video" autoplay="" playsinline=""></video>
+                <div class="face-box" id="faceBox">
+                    <div class="face-guide-top">ALIGN YOUR FACE</div>
+                    <div class="face-guide">CENTER YOUR FACE HERE</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cam-bottom">
+            <button class="btn btn-close-cam2" onclick="closeCamera()">Cancel</button>
+            <button class="btn btn-capture" onclick="capturePhoto()">📸 Capture</button>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // STATE
+        // ============================================================
+        const photos = { front: null, side: null };
+        let cameraMode = null;
+        let stream = null;
+
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+        // ============================================================
+        // PHOTO FUNCTIONS
+        // ============================================================
+
+        async function takePhoto(mode) {
+            cameraMode = mode;
+            const title = document.getElementById('camTitle');
+            if (mode === 'front') {
+                title.innerHTML = '<span class="mode-front">📷 FRONT</span>';
+            } else {
+                title.innerHTML = '<span class="mode-side">📷 SIDE</span>';
+            }
+            try {
+                stream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 1280 } }
+                });
+                const video = document.getElementById('video');
+                video.srcObject = stream;
+                await video.play();
+                document.getElementById('cameraOverlay').classList.add('active');
+                setStatus(`📷 Position your face for ${mode.toUpperCase()} photo`);
+            } catch (err) {
+                setStatus('❌ Camera error: ' + err.message, 'error');
+            }
+        }
+
+        function capturePhoto() {
+            const video = document.getElementById('video');
+            const canvas = document.createElement('canvas');
+            const size = Math.min(video.videoWidth || 1280, video.videoHeight || 1280);
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            const sx = ((video.videoWidth || 1280) - size) / 2;
+            const sy = ((video.videoHeight || 1280) - size) / 2;
+
+            ctx.drawImage(video, sx, sy, size, size, 0, 0, size, size);
+
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.95);
+            photos[cameraMode] = dataUrl;
+            updatePreview(cameraMode);
+            closeCamera();
+            checkReady();
+        }
+
+        function closeCamera() {
+            if (stream) {
+                stream.getTracks().forEach(t => stream.removeTrack(t));
+                stream = null;
+            }
+            document.getElementById('cameraOverlay').classList.remove('active');
+            document.getElementById('video').srcObject = null;
+        }
+
+        function choosePhoto(mode) {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function (e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = function (ev) {
+                    photos[mode] = ev.target.result;
+                    updatePreview(mode);
+                    checkReady();
+                };
+                reader.readAsDataURL(file);
+            };
+            input.click();
+        }
+
+        function updatePreview(mode) {
+            const preview = document.getElementById(mode + 'Preview');
+            const box = document.getElementById(mode + 'Box');
+            if (photos[mode]) {
+                preview.innerHTML = `<img src="${photos[mode]}" alt="${mode} photo">`;
+                box.classList.add('has-photo');
+            } else {
+                preview.innerHTML = `
+            <div class="placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                    <circle cx="12" cy="13" r="4"/>
+                </svg>
+                <span>Tap to add</span>
+            </div>
+        `;
+                box.classList.remove('has-photo');
+            }
+        }
+
+        function clearPhoto(mode) {
+            photos[mode] = null;
+            updatePreview(mode);
+            checkReady();
+        }
+
+        function checkReady() {
+            const hasFront = photos.front !== null;
+            const hasSide = photos.side !== null;
+            const ready = hasFront && hasSide;
+
+            document.getElementById('downloadFrontBtn').disabled = !hasFront;
+            document.getElementById('downloadSideBtn').disabled = !hasSide;
+            document.getElementById('downloadBothBtn').disabled = !ready;
+            document.getElementById('downloadFixedBtn').disabled = !ready;
+
+            if (ready) {
+                setStatus('✅ Both photos ready! Download below.', 'success');
+            } else {
+                setStatus(`📱 ${hasFront ? '✅ Front' : '📷 Front'} | ${hasSide ? '✅ Side' : '📷 Side'}`);
+            }
+        }
+
+        function setStatus(msg, type = '') {
+            const el = document.getElementById('status');
+            el.textContent = msg;
+            el.className = 'status' + (type ? ' ' + type : '');
+        }
+
+        // ============================================================
+        // DOWNLOAD FUNCTIONS - Each uses the working method
+        // ============================================================
+
+        function downloadFront() {
+            if (!photos.front) return;
+            downloadDataUrl(photos.front, 'front_photo.jpg');
+            setStatus('✅ Front photo downloading...', 'success');
+        }
+
+        function downloadSide() {
+            if (!photos.side) return;
+            downloadDataUrl(photos.side, 'side_photo.jpg');
+            setStatus('✅ Side photo downloading...', 'success');
+        }
+
+        function downloadBoth() {
+            if (!photos.front || !photos.side) return;
+            downloadDataUrl(photos.front, 'front_photo.jpg');
+            setTimeout(() => downloadDataUrl(photos.side, 'side_photo.jpg'), 300);
+            setStatus('✅ Both photos downloading...', 'success');
+        }
+
+        function downloadBothFixed() {
+            if (!photos.front || !photos.side) return;
+            fixAndDownload(photos.front, 'front_photo_fixed.jpg');
+            setTimeout(() => fixAndDownload(photos.side, 'side_photo_fixed.jpg'), 300);
+            setStatus('✅ Photos downloading (EXIF fixed)...', 'success');
+        }
+
+        // THE WORKING DOWNLOAD METHOD - same as before!
+        function downloadDataUrl(dataUrl, filename) {
+            const link = document.createElement('a');
+            link.href = dataUrl;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function fixAndDownload(dataUrl, filename) {
+            const img = new Image();
+            img.onload = function () {
+                const canvas = document.createElement('canvas');
+                let width = img.width;
+                let height = img.height;
+                let rotated = false;
+
+                // If wider than tall, rotate 90° CW
+                if (width > height) {
+                    canvas.width = height;
+                    canvas.height = width;
+                    const ctx = canvas.getContext('2d');
+                    ctx.translate(height, 0);
+                    ctx.rotate(Math.PI / 2);
+                    ctx.drawImage(img, 0, 0, width, height);
+                    rotated = true;
+                } else {
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+                }
+                const fixedDataUrl = canvas.toDataURL('image/jpeg', 0.95);
+                downloadDataUrl(fixedDataUrl, filename);
+                setStatus(rotated ? '✅ Rotated & downloaded' : '✅ Downloaded (EXIF removed)', 'success');
+            };
+            img.src = dataUrl;
+        }
+
+        // ============================================================
+        // KEYBOARD
+        // ============================================================
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeCamera();
+            if (e.key === 'Enter' && document.getElementById('cameraOverlay').classList.contains('active')) {
+                capturePhoto();
+            }
+        });
+
+        // ============================================================
+        // INIT
+        // ============================================================
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+            setStatus('⚠️ Camera not available. Use Gallery button.', 'error');
+        }
+    </script>
+
+
+</body></html>
