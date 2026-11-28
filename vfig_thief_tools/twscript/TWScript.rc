@@ -1,0 +1,34 @@
+/** @file TWScript.rc
+ *  Windows resource file describing the script version and name. This
+ *  file contains information about the script that is used to create
+ *  a windows resource object when passed through windres.
+ *
+ *  @note This is based on script.rc in Public Scripts.
+ *  @author Chris <chris@starforge.co.uk>
+ */
+/*
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include "Version.h"
+
+#define SCRIPT_NAME        "twscript"
+#define SCRIPT_LONGNAME    "TWScript Thief2 OSM"
+#define AUTHOR_NAME        "Chris Page"
+#define COPYRIGHT_YEAR     "2013"
+
+#define PACKAGE_NAME       "TWScript"
+#define PACKAGE_VERSTRING  SCRIPT_VERSTRING
+
+#include "pubscript/version.rc"

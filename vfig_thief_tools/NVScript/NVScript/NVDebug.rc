@@ -1,0 +1,9 @@
+// This is the version resource file for the makefile build.
+// Not really used any more, versions are just pulled from buildconfig.h
+//
+#define MODULE_NVDEBUG
+#include "../buildconfig.h"
+#undef MODULE_NVDEBUG
+
+#include "version.rc"
+

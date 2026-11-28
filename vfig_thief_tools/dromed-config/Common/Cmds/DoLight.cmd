@@ -1,0 +1,2 @@
+relight_level
+play_schema bow_begin

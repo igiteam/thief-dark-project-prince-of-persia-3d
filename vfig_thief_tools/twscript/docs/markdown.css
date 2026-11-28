@@ -1,0 +1,95 @@
+body {
+    margin: 0px auto;
+    padding: 10px 30px;
+    font-family: Arial, Tahoma, Verdana, sans-serif;
+    color: #222;
+    background-color: #fff;
+}
+
+body > :first-child {
+    margin-top: 0px !important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: bold;
+    margin: 20px 0px 10px;
+    padding: 0px 0px 0px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 24px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+h6 {
+    font-size: 10px;
+}
+
+code, tt {
+    font-face: fixed;
+    color: #a96300;
+    background: inherit !important;
+}
+
+pre {
+    background-color: #F9F9F9;
+    border: 1px dashed #2F6FAB;
+    color: black;
+    padding: 1em;
+}
+
+a.footnote, a.reversefootnote {
+    color: #a96300;
+    text-decoration: none;
+}
+
+a.footnote:hover, a.reversefootnote:hover {
+    text-decoration: underline;
+    color: #ff7700;
+}
+
+a.footnote {
+    vertical-align: super;
+    font-size: x-small;
+}
+
+div.footnotes {
+    font-size: smaller;
+}
+
+div.footnotes > hr {
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+div.version {
+    font-size: x-small;
+    margin-top: 1em;
+    border-top: 1px solid #CCCCCC;
+}
+
+li p {
+    margin: 0px;
+    padding: 0px;
+}
+
+h3+ul {
+    margin: -10px 0px 0px 0px;
+}

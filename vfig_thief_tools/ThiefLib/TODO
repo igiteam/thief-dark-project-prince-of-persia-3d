@@ -1,0 +1,30 @@
+ThiefLib
+========
+
+New features
+	* EnumCoding: support encoding and decoding of bitmasks
+	* Victory: new, per VictoryCheck(er) and <lg/convict.h>
+
+New messages
+	* HierarchyMessage: new, from ITraitManager::Listen (per DH2)
+	* ObjectMessage: new, from IObjectSystem::Listen (per DH2)
+	* ParameterMessage: new, from ParameterCache activity
+
+TNH/NV/TW features
+	* ParameterCache: NVScript-style syntax (script name prefix, object targetting)
+	* QuestVariable: message substitutions per cQVarText et al.
+	* QuestVariable: reference syntax parsing per cQVarProcessor, TWBaseScript, et al.
+	* TrapTrigger: requirement counting per cRequirement
+	* TrapTrigger: NVScript-style features (on, off, count, capacitor, falloff, failchance, dest)
+
+Refactoring
+	* Replace Parameter<Object> with Parameter<Object::Ref>, resolvable dynamically to an Object.
+	* Promote LGMultiTypeError to something public, documenting it and the general LGMulti system (without actually exposing LGMulti).
+	* Use boost::bimap (now that 1.55 supports initializer lists).
+	* AI, Types: split each into two or more units.
+
+Documentation
+	* Document undocumented units: AI, ActReact, Combat, Physics, Player, Security, Sound, Tweq, Types.
+	* Document the template and various accessory files, such as version.rc and module.mk.
+	* Add more general documentation including examples.
+

@@ -1,0 +1,66 @@
+- bake to one texture
+    -> baked lightmap seems a little darker than original in-game? (ambient?)
+    -> color difference!
+        -> look into using palettes from fam/*/full.pcx for .gif/.pcx in
+            that fam.
+    -> texture name "Generated Image" is very bad for .bin export
+
+support terrain_scale in .mtl
+    -> i dont want to, but people are gonna want it, i reckon
+
+support dds
+    -> seems bpy.data.images.load("foo.dds") works just fine
+
+load palette from fam/X/full.pcx (or failing that, fam/full.pcx ?) for pcx images. because the baked in palettes are not what the game uses.
+
+load *stock* textures from crf
+
+    i think what i want to do for file loading...
+    given:
+        - all stock textures are .pcx or .gif, so i can load them from bytes
+          (even out of a .crf)
+        - .png, .jpg in fms are all unzipped anyway, so i can still use
+          bpy.data.images.load() on them
+        - (.dds i still dont support, but falls into the former category)
+    i want to accept a *set of filenames*
+    and return a matching set of full filepaths or bytes/numpy arrays
+    where all the subdir searching, language subdir adding, crf loading,
+    etc. etc. is all done here in this one function. (also returned should
+    be metadata of name, format)
+
+    then the caller (i.e. do_txload) can dispatch to bpy.data.images.load()
+    or to images.load_gif()/images.load_pcx() as needed.
+
+
+MAYBE:
+
+nemyax: I hadn't unpacked the textures, so I got the "MISSING" material in all of the slots. May I suggest creating a material called "MISSING: " + texture_name for each missing texture instead of sharing a single "MISSING" material?
+
+    me: one material per texture even if the image is missing is a good idea. would then allow me to unify both the "this texture cant be found" and "i cant load this type of texture" (e.g. dds)  cases, and the user could then manually fix up the affected materials.
+
+support ancient thief .mis files?
+    E:/dev/thief/T1FM/LGS/m00_036.mis: WR version 0.18
+    E:/dev/thief/T1FM/LGS/playtest.mis: WR version 0.18
+    E:/dev/thief/T1FM/LGS/tower48.mis: WR version 0.19
+    E:/dev/thief/T1FM/LGS/woodsie_051.mis: WR version 0.18
+
+toggle jorge, sky_hack
+    -> does this mean toggle alpha clip/0 alpha?
+    -> toggle import of them, even!
+
+jorge shader?
+sky_hack shader?
+
+is jorge, sky_hack lightmapped? (yes)
+    -> default to skipping their lightmaps, they dont need them?
+       and the _biggest_ single atlas space users (in t2) are sky polys.
+
+toggle backface culling
+    -> for all the materials of the level
+
+support animlights
+    -> option to bake them into the atlas during import?
+    -> or option for second animlight-only atlas?
+    -> or three atlases: static, default-on-animlight, default-off-animlight?
+
+progress goes up to 200%?
